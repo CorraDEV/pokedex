@@ -7,9 +7,9 @@ function SearchBar({pokemon, setPokemon, setIsDuplicated}) {
     const [isClicked, setIsClicked] = useState(false);        
 
     return (
-        <>
+        <div id='searchBar'>
             <h1>Search Pokémon</h1>
-            <input value={searchValue} onChange={(evt) => setSearchValue(evt.target.value)} type="text" />
+            <input placeholder='Enter a pokemon name' value={searchValue} onChange={(evt) => setSearchValue(evt.target.value)} type="text"/>
             <button onClick={async (evt) => {
                 setIsClicked(true);
                 setSearchValueCopy(searchValue);
@@ -19,7 +19,7 @@ function SearchBar({pokemon, setPokemon, setIsDuplicated}) {
             }}>Search</button>
             <p>Results for [{searchValueCopy}]</p>
             {!pokemon && isClicked && <p>No results</p>}
-        </>
+        </div>
     )
 }
 
