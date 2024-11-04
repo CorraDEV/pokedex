@@ -18,7 +18,7 @@ function SearchBar({pokemon, setPokemon, setIsDuplicated}) {
                 setIsDuplicated(false);
             }}>Search</button>
             <p>Results for [{searchValueCopy}]</p>
-            {!pokemon && isClicked && <p>No result</p>}
+            {!pokemon && isClicked && <p>No results</p>}
         </>
     )
 }
