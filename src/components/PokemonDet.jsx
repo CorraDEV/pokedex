@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDuplicated}) {                
     const errorMsg = 'This Pokémon is already in your Pokédex';        
     const pokemonName = pokemon.forms[0].name.charAt(0).toUpperCase() + pokemon.forms[0].name.slice(1);
@@ -37,18 +35,7 @@ function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDu
             <div id='pokemon-box'>
                 <div id='pokemon-card'>
                     <img src={pokemon.sprites.front_default} alt="pokemon image" />
-                    <audio src={pokemon.cries.legacy} controls />                
-                    <button id='add-to-pokedex-btn' onClick={(evt) => {
-                        if(!pokemonList.find(ele => ele.id === pokemon.id)){
-                            setPokemonList([...pokemonList, pokemon]);
-                            localStorage.setItem('pokemonList', JSON.stringify([...pokemonList, pokemon]));
-                            setIsDuplicated(false);
-                        }
-                        else{                    
-                            setIsDuplicated(true);                    
-                        }                 
-                    }}>Add to your Pokédex</button>            
-                    {isDuplicated && <p>{errorMsg}</p>}
+                    <audio src={pokemon.cries.legacy} controls />                                    
                 </div>
                 <div id='stats-box'>
                     <h4>Stats:</h4>              
@@ -67,7 +54,18 @@ function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDu
                             )}                            
                         </ul>
                     }
-                </div>            
+                </div>
+                <button id='add-to-pokedex-btn' onClick={(evt) => {
+                    if(!pokemonList.find(ele => ele.id === pokemon.id)){
+                        setPokemonList([...pokemonList, pokemon]);
+                        localStorage.setItem('pokemonList', JSON.stringify([...pokemonList, pokemon]));
+                        setIsDuplicated(false);
+                    }
+                    else{                    
+                        setIsDuplicated(true);                    
+                    }                 
+                }}>Add to your Pokédex</button>            
+                {isDuplicated && <p>{errorMsg}</p>}            
             </div>
         </>
     )

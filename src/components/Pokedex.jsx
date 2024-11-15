@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 function Pokedex({pokemonList, setPokemonList, setPokemon, setIsDuplicated}) {                    
     return (
         <div id='pokedex'>

@@ -1,21 +1,33 @@
 #pokemonGeneralInfo{
     display: flex;
-    justify-content: center;
-    gap: 5%;
+    flex-wrap: wrap;
+    justify-content: center;        
+    column-gap: 15rem;    
+    width: 50%;
+    margin: 0 auto;       
 }
 
 #searchBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+#searchBar > input[type="text"]{
     width: 50%;
-    text-align: center;
-    margin: 0 auto;
+}
+
+#searchBar > h1{
+    font-size: calc(2.5rem + 1vw);
 }
 
 #pokemon-box{
     display: flex;
+    flex-wrap: wrap;
     width: 50%;
     margin: 0 auto;
-    margin-top: 3%;
-    gap: 33%;
+    margin-top: 5rem;
+    gap: 2.5rem 40rem;
 }
 
 #pokemon-card{
@@ -25,46 +37,52 @@
 
 #type-box{
     display: flex;
-    gap: 5%;
+    column-gap: 0.75rem;
 }
 
 #type-list{
     display: flex;
-    gap: 2%;
+    column-gap: 0.25rem;
 }
 
 .type-item{
     display: block;
-    background-color: red;
-    width: 100px;
-    height: auto;
-    text-align: center;
+    background-color: red;    
+    text-align: center;    
     color: white;
-    padding: 2% 5%;
-    border-radius: 10px;
+    max-width: 10rem;
+    max-height: 3rem;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
 }
 
 #add-to-pokedex-btn{
-    margin-top: 5%;
+    min-width: 30rem;
 }
 
-#pokedex{
-    margin-left: 3%;   
-    margin-top: 3%; 
+#pokedex > h1{       
+    text-align: center;
+    margin-top: 5rem;
+    font-size: calc(2.5rem + 1vw);
 }
 
 #pokemon-list{
-    display: flex;
-    flex-wrap: wrap;    
-    gap: 3%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 5rem 7rem;            
+    margin: 0 2rem;
 }
 
 .pokemon-item{
     display: flex;
     flex-direction: column;    
-    width: 7.5%;
+    min-width: 16rem;
     height: auto;
     text-align: center;
+}
+
+.pokemon-item > h2{
+    font-size: calc(1.5rem + 1vw);;
 }
 
 ::placeholder {
