@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;    
+    position: relative;
 }
 
 #searchBar > input[type="text"]{
@@ -21,13 +22,24 @@
     font-size: calc(2.5rem + 1vw);
 }
 
+#searchBarError{
+    position: absolute;
+    bottom: -4rem;
+}
+
 #pokemon-box{
     display: flex;
     flex-wrap: wrap;
     width: 50%;
     margin: 0 auto;
     margin-top: 5rem;
-    gap: 2.5rem 40rem;
+    gap: 2.5rem 40rem;    
+    position: relative;
+}
+
+#pokemonDetError{
+    position: absolute;
+    bottom: -6rem;
 }
 
 #pokemon-card{
@@ -172,4 +184,10 @@
 
 .unknown{
     background-color: #68A090;
+}
+
+@media (max-width: 1831px){
+    #pokemon-box{
+        justify-content: center;
+    }    
 }

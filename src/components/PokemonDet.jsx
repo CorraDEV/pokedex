@@ -65,7 +65,7 @@ function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDu
                         setIsDuplicated(true);                    
                     }                 
                 }}>Add to your Pokédex</button>            
-                {isDuplicated && <p>{errorMsg}</p>}            
+                {isDuplicated && <p id="pokemonDetError">{errorMsg}</p>}            
             </div>
         </>
     )

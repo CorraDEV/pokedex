@@ -7,6 +7,6 @@ export default async function findPokemon(pokemonName) {
         if(response.status === 200){
             const pokemon = await response.json();
             return pokemon;
-        }        
+        }               
     }                       
 }
