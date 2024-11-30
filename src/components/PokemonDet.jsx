@@ -1,6 +1,7 @@
 function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDuplicated}) {                
     const errorMsg = 'This Pokémon is already in your Pokédex';        
     const pokemonName = pokemon.forms[0].name.charAt(0).toUpperCase() + pokemon.forms[0].name.slice(1);
+    const pokemonGif = pokemon.sprites.versions['generation-v']['black-white'].animated.front_default;
 
     return (
         <>
@@ -34,7 +35,7 @@ function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDu
             </div>                 
             <div id='pokemon-box'>
                 <div id='pokemon-card'>
-                    <img src={pokemon.sprites.front_default} alt="pokemon image" />
+                    <img id="pokemon-det-gif" src={pokemonGif} alt="pokemon image" />
                     <audio src={pokemon.cries.legacy} controls />                                    
                 </div>
                 <div id='stats-box'>
@@ -45,10 +46,10 @@ function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDu
                             {pokemon.stats.map(
                                 stat =>                                    
                                     <div key={crypto.randomUUID()}>                                        
-                                        {stat.stat.name}
-                                        <div>
+                                        <span>{stat.stat.name}</span>
+                                        <div className="stat-bar-box">
                                             <progress value={stat.base_stat} max="255"></progress>
-                                            {` ${stat.base_stat}/255`}                                        
+                                            <span>{`${stat.base_stat}/255`}</span>                                        
                                         </div>
                                     </div>                                
                             )}                            
