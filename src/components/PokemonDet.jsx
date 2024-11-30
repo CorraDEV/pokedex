@@ -42,10 +42,10 @@ function PokemonDet({pokemon, pokemonList, setPokemonList, isDuplicated, setIsDu
                     <h4>Stats:</h4>              
                     {
                         pokemon.stats &&
-                        <ul>
+                        <ul id="stats-list">
                             {pokemon.stats.map(
                                 stat =>                                    
-                                    <div key={crypto.randomUUID()}>                                        
+                                    <div className="stat-box" key={crypto.randomUUID()}>                                        
                                         <span>{stat.stat.name}</span>
                                         <div className="stat-bar-box">
                                             <progress value={stat.base_stat} max="255"></progress>
