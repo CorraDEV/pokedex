@@ -91,11 +91,13 @@
 .pokemon-item-gif{
     height: 15rem;
     margin-bottom: 0.5rem;
+    object-fit: contain;
 }
 
 #pokemon-det-gif{
     height: 25rem;   
     width: 30rem;     
+    object-fit: contain;
 }
 
 .pokemon-item{
@@ -213,7 +215,7 @@
     background-color: #68A090;
 }
 
-@media (max-width: 1829px){
+@media (max-width: 1841px){
     #pokemon-box{
         justify-content: center;
         column-gap: 40rem; 
