@@ -23,9 +23,10 @@
     font-size: calc(2.5rem + 1vw);
 }
 
-#searchBarError{
+#searchBarError,
+#loadingField{
     position: absolute;
-    bottom: -4rem;
+    bottom: -3rem;
 }
 
 #pokemon-box{
