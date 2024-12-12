@@ -84,7 +84,7 @@
 
 #pokemon-list{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
     gap: 5rem 7rem;            
     margin: 0 2rem;
 }
@@ -103,8 +103,7 @@
 
 .pokemon-item{
     display: flex;
-    flex-direction: column;    
-    min-width: 16rem;
+    flex-direction: column;        
     height: auto;
     text-align: center;
 }
@@ -241,6 +240,12 @@
     }
 }
 
+@media (max-width: 768px){
+    #pokemonGeneralInfo{                
+        column-gap: 6rem;        
+    }    
+}
+
 @media (max-width: 590px){            
     #pokemon-list{
         display: flex;
@@ -252,10 +257,9 @@
         width: 20rem;
     }
 
-    #pokemonGeneralInfo{
-        display: grid;
+    #pokemonGeneralInfo{        
         grid-template-columns: repeat(2, minmax(16rem, 1fr));                  
-        column-gap: 0;        
+        column-gap: 4rem;        
     }    
 }
 
@@ -265,5 +269,11 @@
         grid-template-columns: repeat(2, minmax(16rem, 1fr));  
         width: fit-content;
         margin: 0 auto;      
+    }    
+}
+
+@media (max-width: 425px){            
+    #pokemonGeneralInfo{                
+        column-gap: 0;        
     }    
 }
